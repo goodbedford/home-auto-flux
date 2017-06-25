@@ -1,66 +1,66 @@
-import React from "react";
+import React from 'react';
 
 const PropTypes = React.PropTypes;
 
 const style = {
-	alignItems: "center",
-	background: "linear-gradient(moccasin	,Bisque,pink)",
+  alignItems: 'center',
+  background: 'linear-gradient(moccasin	,Bisque,pink)',
   // background: "linear-gradient(moccasin	,orange,pink)",
-	color: "SteelBlue",
-	display: "flex",
-	fontSize: "36px",
-	fontWeight: "bold",
-	height: "50vh",
-	justifyContent: "center",
-	width: "100%"
+  color: 'SteelBlue',
+  display: 'flex',
+  fontSize: '36px',
+  fontWeight: 'bold',
+  height: '50vh',
+  justifyContent: 'center',
+  width: '100%'
 };
 
 const propTypes = {
-	loadingMsg: PropTypes.string.isRequired,
-	styles: PropTypes.string.isRequired
+  loadingMsg: PropTypes.string.isRequired,
+  styles: PropTypes.string.isRequired
 };
 
 
 const defaultProps = {
-	loadingMsg: "loading",
-	styles: "loading loading--block-md"
+  loadingMsg: 'loading',
+  styles: 'loading loading--block-md'
 };
 
 class Loading extends React.Component {
-	constructor(props) {
-		super(props);
-		this.msg = this.props.loadingMsg;
-		this.state = {
-			msg: this.msg,
-			isMounted: false
-		};
-	}
-	componentDidMount() {
-		this.setState({isMounted:true});
+  constructor(props) {
+    super(props);
+    this.msg = this.props.loadingMsg;
+    this.state = {
+      msg: this.msg,
+      isMounted: false
+    };
+  }
+  componentDidMount() {
+    this.setState({isMounted:true});
 
-		if(this.state.isMounted) {
-			this.intervalId = setInterval(() => {
-				this.setState((prevState, props) => {
-					if(prevState.msg.length === 13) {
-						return {msg: this.msg};
-					}
-					return {msg: prevState.msg + "."};
-				});
-			},500);
-		}
-	}
-	componentWillUnMount() {
-		this.setState({isMounted:false});
-		console.log("clear Loading",this);
-		clearInterval(this.intervalId);
+    if(this.state.isMounted) {
+      this.intervalId = setInterval(() => {
+        this.setState((prevState, props) => {
+          if(prevState.msg.length === 13) {
+            return {msg: this.msg};
+          }
+          return {msg: prevState.msg + '.'};
+        });
+      },500);
+    }
+  }
+  componentWillUnMount() {
+    this.setState({isMounted:false});
+    console.log('clear Loading',this);
+    clearInterval(this.intervalId);
 
-	}
+  }
 
-	render() {
-		return (
+  render() {
+    return (
       <div className={this.props.styles}>{this.state.msg}</div>
-		);
-	}
+    );
+  }
 }
 Loading.propTypes = propTypes;
 Loading.defaultProps = defaultProps;

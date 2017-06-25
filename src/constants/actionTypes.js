@@ -1,8 +1,10 @@
-import keyMirror from "keymirror";
+import keyMirror from 'keyMirror';
 
 
 const actionTypes = {
-	WELCOME:	null
+  WELCOME:	null,
+  RECEIVE_HOMES: null,
+  RECEIVE_ERRORS: null
 };
 
 

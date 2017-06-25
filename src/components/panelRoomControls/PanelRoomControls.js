@@ -1,22 +1,22 @@
-import React from "react";
+import React from 'react';
 
 const PropTypes = React.PropTypes;
 const propTypes = {
-	curtains: PropTypes.bool.isRequired,
-	lights: PropTypes.bool.isRequired,
-	name: PropTypes.string.isRequired,
-	thermostat: PropTypes.number.isRequired,
-	handleTempIncrease: PropTypes.func.isRequired,
-	handleTempDecrease: PropTypes.func.isRequired,
-	toggleDevice: PropTypes.func.isRequired,
+  curtains: PropTypes.bool.isRequired,
+  lights: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  thermostat: PropTypes.number.isRequired,
+  handleTempIncrease: PropTypes.func.isRequired,
+  handleTempDecrease: PropTypes.func.isRequired,
+  toggleDevice: PropTypes.func.isRequired,
 };
 const defaultProps = {
-	thermostat: 0
+  thermostat: 0
 };
 
 const PanelRoomControls = (props) => {
 
-	return (
+  return (
     <div className="room" data-room-name={props.name}>
       <div className="room__section">
         <div className="room__header">{props.name}</div>
@@ -48,13 +48,13 @@ const PanelRoomControls = (props) => {
           <div className="btn__group-title">curtains</div>
           <div className="btn__group">
             <button
-              className={props.curtains ? "btn btn--toggle btn--active" : "btn btn--toggle"}
-              onClick={props.toggleDevice("curtains")}>
+              className={props.curtains ? 'btn btn--toggle btn--active' : 'btn btn--toggle'}
+              onClick={props.toggleDevice('curtains')}>
               open
             </button>
             <button
-              className={!props.curtains ? "btn btn--toggle btn--active" :"btn btn--toggle"}
-              onClick={props.toggleDevice("curtains")}>
+              className={!props.curtains ? 'btn btn--toggle btn--active' :'btn btn--toggle'}
+              onClick={props.toggleDevice('curtains')}>
               closed
             </button>
           </div>
@@ -63,20 +63,20 @@ const PanelRoomControls = (props) => {
           <div className="btn__group-title">lights</div>
           <div className="btn__group">
             <button
-              className={props.lights ? "btn btn--toggle btn--active" : "btn btn--toggle"}
-              onClick={props.toggleDevice("lights")}>
+              className={props.lights ? 'btn btn--toggle btn--active' : 'btn btn--toggle'}
+              onClick={props.toggleDevice('lights')}>
               open
             </button>
             <button
-              className={!props.lights ? "btn btn--toggle btn--active" :"btn btn--toggle"}
-              onClick={props.toggleDevice("lights")}>
+              className={!props.lights ? 'btn btn--toggle btn--active' :'btn btn--toggle'}
+              onClick={props.toggleDevice('lights')}>
               closed
             </button>
           </div>
         </div>
       </div>
     </div>
-	);
+  );
 };
 PanelRoomControls.propTypes = propTypes;
 PanelRoomControls.defaultProps = defaultProps;

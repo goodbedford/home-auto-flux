@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 
 const PanelDetails = (props) => {
 
-	return (
+  return (
     <div className="home-auto__panel-controls">
         {props.children}
     </div>
-	);
+  );
 };
 
 export default PanelDetails;

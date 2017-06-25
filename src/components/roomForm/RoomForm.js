@@ -1,35 +1,35 @@
-import React from "react";
-import {Route, Redirect} from "react-router-dom";
+import React from 'react';
+import {Route, Redirect} from 'react-router-dom';
 
 const PropTypes = React.PropTypes;
 const propTypes = {
-	formMsg: PropTypes.string.isRequired,
-	goToId: PropTypes.string.isRequired,
-	homeId: PropTypes.string.isRequired,
-	isLoading: PropTypes.bool.isRequired,
-	isSubmitted: PropTypes.bool.isRequired,
-	handleChange: PropTypes.func.isRequired,
-	handleSubmit: PropTypes.func.isRequired,
+  formMsg: PropTypes.string.isRequired,
+  goToId: PropTypes.string.isRequired,
+  homeId: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  isSubmitted: PropTypes.bool.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 const defaultProps = {
-	isLoading: false,
-	isSubmitted: false,
-	name: "Unnamed Room",
-	formMsg: "form"
+  isLoading: false,
+  isSubmitted: false,
+  name: 'Unnamed Room',
+  formMsg: 'form'
 };
 const RoomForm = (props) => {
-	if (props.isLoading) {
-		return (
+  if (props.isLoading) {
+    return (
       <HomeAutomation>
         <HeaderContainer />
         <Loading />
       </HomeAutomation>
-		);
-	}
-	if(props.isSubmitted && props.goToId) {
-		return <Redirect to={`/homes/${props.homeId}/rooms/${props.goToId}`} />;
-	}
-	return (
+    );
+  }
+  if(props.isSubmitted && props.goToId) {
+    return <Redirect to={`/homes/${props.homeId}/rooms/${props.goToId}`} />;
+  }
+  return (
     <form
       name="roomForm"
       className="form"
@@ -59,7 +59,7 @@ const RoomForm = (props) => {
         </div>
       </div>
     </form>
-	);
+  );
 };
 
 RoomForm.propTypes = propTypes;

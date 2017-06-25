@@ -1,16 +1,16 @@
-import React from "react";
-import ReactDom from "react-dom";
+import React from 'react';
+import ReactDom from 'react-dom';
 import {
   BrowserRouter as Router,
   Link,
   Route,
   Switch
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import WelcomeContainer from "../components/welcome/WelcomeContainer";
-import HomeAutomationContainer from "../components/homeAutomation/HomeAutomationContainer";
-import HomeDetails from "../components/homeDetails/HomeDetails";
-import RoomDetails from "../components/roomDetails/RoomDetails";
+import WelcomeContainer from '../components/welcome/WelcomeContainer';
+import HomeAutomationContainer from '../components/homeAutomation/HomeAutomationContainer';
+import HomeDetails from '../components/homeDetails/HomeDetails';
+import RoomDetails from '../components/roomDetails/RoomDetails';
 // import MainRoute from "../components/MainRoute";
 // import Home from "../components/Home";
 // import NewsRoute from "../components/NewsRoute";

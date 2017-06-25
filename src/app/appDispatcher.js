@@ -1,6 +1,6 @@
-import { AppDispatcher } from "flux";
+import { Dispatcher } from 'flux';
 
-const appDispatcher = new AppDispatcher();
+const appDispatcher = new Dispatcher();
 
 
 export default appDispatcher;

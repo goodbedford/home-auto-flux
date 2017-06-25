@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 
 const HomeAutomation = (props) => {
 
-	return (
+  return (
     <div className="home-auto home-auto--md home-auto--sm">
       {props.children}
     </div>
-	);
+  );
 };
 
 

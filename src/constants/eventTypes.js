@@ -1,7 +1,7 @@
-import keyMirror from "keymirror";
+import keyMirror from 'keyMirror';
 
 const eventTypes = {
-	CHANGE: null
+  CHANGE: null
 };
 
 export default keyMirror(eventTypes);

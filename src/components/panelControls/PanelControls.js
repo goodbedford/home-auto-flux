@@ -1,24 +1,24 @@
-import React from "react";
-import {NavLink} from "react-router-dom";
+import React from 'react';
+import {NavLink} from 'react-router-dom';
 
 const PropTypes = React.PropTypes;
 const propTypes = {
-	header: PropTypes.string.isRequired
+  header: PropTypes.string.isRequired
 };
 
 const PanelControls = (props) => {
-	let button = "";
-	if(props.match.params.homeId) {
-		button = (
+  let button = '';
+  if(props.match.params.homeId) {
+    button = (
       <NavLink to={`/homes/${props.match.params.homeId}/rooms/new`}>
         <span className="controls__icon controls__icon--sm invisible">+</span>
       </NavLink>
     );
-	}
+  }
 
-	return (
+  return (
     <div className="controls controls-flex controls-flex--center-start">
-      <div className={"controls__group controls__group--tall " + (props.match.params.homeId ? "controls__group--space-between" : "controls__group--center-center")}>
+      <div className={'controls__group controls__group--tall ' + (props.match.params.homeId ? 'controls__group--space-between' : 'controls__group--center-center')}>
         {/* <NavLink to={`/homes/${props.match.params.homeId}/rooms/new`}>
           <span className="controls__icon controls__icon--sm invisible">+</span>
         </NavLink> */}
@@ -31,7 +31,7 @@ const PanelControls = (props) => {
         </div>
       </div>
     </div>
-	);
+  );
 };
 PanelControls.propTypes = propTypes;
 export default PanelControls;
